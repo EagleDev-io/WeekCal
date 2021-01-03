@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="17709" systemVersion="19H2" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Reminder" representedClassName=".Reminder" syncable="YES">
+        <attribute name="completed" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
+        <attribute name="content" optional="YES" attributeType="String"/>
+        <attribute name="createdAt" attributeType="Date" defaultDateTimeInterval="631316160" usesScalarValueType="NO"/>
+        <attribute name="dayOfWeekValue" attributeType="Integer 64" usesScalarValueType="YES"/>
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="periodicityValue" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="priorityValue" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="remindAt" optional="YES" attributeType="Double" defaultValueString="0" usesScalarValueType="YES"/>
+        <relationship name="tags" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Tag" inverseName="reminder" inverseEntity="Tag"/>
+    </entity>
+    <entity name="Tag" representedClassName="Tag" syncable="YES">
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <relationship name="reminder" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Reminder" inverseName="tags" inverseEntity="Reminder"/>
+    </entity>
+    <elements>
+        <element name="Reminder" positionX="-63" positionY="-18" width="128" height="178"/>
+        <element name="Tag" positionX="-54" positionY="36" width="128" height="73"/>
+    </elements>
+</model>
